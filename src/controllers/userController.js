@@ -1,4 +1,5 @@
 import express from "express";
+<<<<<<< HEAD
 import userEntity from "../entities/user.js";
 import { AppDataSource } from "../database/data-source.js";
 import { Like } from "typeorm";
@@ -7,6 +8,12 @@ const route = express.Router();
 const userRepository = AppDataSource.getRepository(userEntity);
 
 route.post("/", async (request, response) => {
+=======
+
+const route = express.Router();
+
+route.post("/", (request, response) => {
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
     // const name = request.body.name;
 
     const {name, email, password, typeUser} = request.body;
@@ -15,7 +22,11 @@ route.post("/", async (request, response) => {
         return response.status(400).send({"response": "O usuário não pode ser nulo ou vazio!"})
     }
 
+<<<<<<< HEAD
     if(email.includes("@") == false || email.length < 5) {
+=======
+    if(email.Contains("@") == false || email.length < 5) {
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
         return response.status(400).send({"response": "O email não pode ser nulo ou vazio!"})
     }
 
@@ -27,6 +38,7 @@ route.post("/", async (request, response) => {
         return response.status(400).send({"response": "O tipo de usuário deve ser comum ou admin!"})
     }
 
+<<<<<<< HEAD
     const newUser = userRepository.create({name, email, password, typeUser});
 
     try {
@@ -93,4 +105,9 @@ route.put("/", async (request, response) => {
     
 // });
 
+=======
+    return response.status(201).send({"response": `O usuário ${name} foi criado com sucesso!`});
+});
+
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
 export default route;
