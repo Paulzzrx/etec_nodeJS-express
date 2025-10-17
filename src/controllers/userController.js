@@ -1,4 +1,8 @@
 import express from "express";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ff87df1d2724ccf520512806bc6bc3e4f084294c
 import userEntity from "../entities/user.js";
 import { AppDataSource } from "../database/data-source.js";
 import { Like } from "typeorm";
@@ -7,6 +11,15 @@ const route = express.Router();
 const userRepository = AppDataSource.getRepository(userEntity);
 
 route.post("/", async (request, response) => {
+<<<<<<< HEAD
+=======
+=======
+
+const route = express.Router();
+
+route.post("/", (request, response) => {
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
+>>>>>>> ff87df1d2724ccf520512806bc6bc3e4f084294c
     // const name = request.body.name;
 
     const {name, email, password, typeUser} = request.body;
@@ -15,7 +28,15 @@ route.post("/", async (request, response) => {
         return response.status(400).send({"response": "O usuário não pode ser nulo ou vazio!"})
     }
 
+<<<<<<< HEAD
     if(email.includes("@") == false || email.length < 5) {
+=======
+<<<<<<< HEAD
+    if(email.includes("@") == false || email.length < 5) {
+=======
+    if(email.Contains("@") == false || email.length < 5) {
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
+>>>>>>> ff87df1d2724ccf520512806bc6bc3e4f084294c
         return response.status(400).send({"response": "O email não pode ser nulo ou vazio!"})
     }
 
@@ -27,6 +48,10 @@ route.post("/", async (request, response) => {
         return response.status(400).send({"response": "O tipo de usuário deve ser comum ou admin!"})
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ff87df1d2724ccf520512806bc6bc3e4f084294c
     const newUser = userRepository.create({name, email, password, typeUser});
 
     try {
@@ -89,6 +114,7 @@ route.put("/", async (request, response) => {
     
 });
 
+<<<<<<< HEAD
 route.delete("/:idUser", async (request, response) => {
     const { idUser } = request.params;
 
@@ -100,4 +126,15 @@ route.delete("/:idUser", async (request, response) => {
     return response.status(200).send({"resposnse": `usuario excluido com sucesso!`});
 });
 
+=======
+// route.delete("/", async (request, response) => {
+    
+// });
+
+=======
+    return response.status(201).send({"response": `O usuário ${name} foi criado com sucesso!`});
+});
+
+>>>>>>> ae783d3fd5fa3c431654e673cfa10c81e34dce84
+>>>>>>> ff87df1d2724ccf520512806bc6bc3e4f084294c
 export default route;
