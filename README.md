@@ -1,4 +1,4 @@
-# 🌐 NodeJS + Express - Etec de Embu
+# NodeJS + Express - Etec de Embu
 
 Arquivos referentes à aula de **NodeJS e Express** que estou tendo na **Etec de Embu**.  
 Projeto criado para estudos e práticas de desenvolvimento backend com JavaScript.
@@ -26,7 +26,7 @@ Includes:
 
 ---
 
-📘 **Tecnologias / Technologies**
+**Tecnologias / Technologies**
 - Node.js  
 - Express.js  
 - JavaScript  
